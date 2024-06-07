@@ -10,10 +10,10 @@
     <h1 th:text="#{content.title}"></h1>
     <h2 th:text="#{content.subtitle}"></h2>
     <p th:text="#{content.message}"></p>
-    <p th:unless="${previous eq null or previous eq ''}">前回入力された値は「<span th:text="${previous}"></span>」でした。</p>
+    <p th:unless="${previous eq null or previous eq ''}" ><span th:text="#{content.lines4} + ${previous} + #{content.lines5}"></span></p>
     <form action="/output" method="post">
         <input type="text" name="input_value">
-        <input type="submit" value="送信">
+        <input type="submit" th:value="#{content.send}">
     </form>
 </body>
 
